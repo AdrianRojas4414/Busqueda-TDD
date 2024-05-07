@@ -1,6 +1,10 @@
 export function buscarProyecto(nombre, proyectos) {
-  if(proyectos.length === 0)
+  if(proyectos.length === 0){
     return "";
-  if(nombre === proyectos[0])
-    return nombre;
+  }
+
+  for(let i = 0; proyectos.length; i++){
+    if(proyectos[i] === nombre)
+      return proyectos[i];
+  }
 }
