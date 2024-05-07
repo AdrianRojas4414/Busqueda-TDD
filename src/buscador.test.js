@@ -5,4 +5,9 @@ describe("Buscar", () => {
     let proyectos = [];
     expect(buscarProyecto("proyecto1", proyectos)).toEqual("");
   });
+  it("encuentra un proyecto cuando el mismo se encuentra en una lista con un solo proyecto", () => {
+    let proyectos = [];
+    proyectos.push("pro1");
+    expect(buscarProyecto("pro1", proyectos)).toEqual("pro1");
+  });
 });
