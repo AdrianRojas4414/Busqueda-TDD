@@ -5,11 +5,10 @@ export function buscarProyecto(nombre, proyectos) {
   if(proyectos.length === 0){
     return "";
   }
-  
-  do{
-    if(proyectos[i] === nombre)
-      matches.push(nombre);
-    i++;
-  }while (i<=proyectos.length)
+
+  for(const pro of proyectos){
+    if(pro.startsWith(nombre))
+      matches.push(pro);
+  }
   return matches;
 }

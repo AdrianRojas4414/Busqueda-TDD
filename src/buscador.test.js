@@ -27,4 +27,13 @@ describe("Buscar", () => {
     proyectos.push("pro5");
     expect(buscarProyecto("pro2", proyectos)).toEqual(["pro2","pro2"]);
   });
+  it("encuentra mas de un proyecto cuando lo escrito coincide con la primera parte de varios proyectos en una lista", () => {
+    let proyectos = [];
+    proyectos.push("pro1");
+    proyectos.push("ecuaciones");
+    proyectos.push("pro3");
+    proyectos.push("temor");
+    proyectos.push("pro5");
+    expect(buscarProyecto("pr", proyectos)).toEqual(["pro1","pro3","pro5"]);
+  });
 });
