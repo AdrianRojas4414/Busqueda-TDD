@@ -8,7 +8,7 @@ describe("Buscar", () => {
   it("encuentra un proyecto cuando el mismo se encuentra en una lista con un solo proyecto", () => {
     let proyectos = [];
     proyectos.push("pro1");
-    expect(buscarProyecto("pro1", proyectos)).toEqual("pro1");
+    expect(buscarProyecto("pro1", proyectos)).toEqual(["pro1"]);
   });
   it("encuentra un proyecto cuando el mismo se encuentra en una lista con varios proyectos", () => {
     let proyectos = [];
@@ -16,6 +16,15 @@ describe("Buscar", () => {
     proyectos.push("pro2");
     proyectos.push("pro3");
     proyectos.push("pro4");
-    expect(buscarProyecto("pro3", proyectos)).toEqual("pro3");
+    expect(buscarProyecto("pro3", proyectos)).toEqual(["pro3"]);
+  });
+  it("encuentra mas de un proyecto cuando se encuentran en una lista con varios proyectos", () => {
+    let proyectos = [];
+    proyectos.push("pro1");
+    proyectos.push("pro2");
+    proyectos.push("pro3");
+    proyectos.push("pro2");
+    proyectos.push("pro5");
+    expect(buscarProyecto("pro2", proyectos)).toEqual(["pro2","pro2"]);
   });
 });
